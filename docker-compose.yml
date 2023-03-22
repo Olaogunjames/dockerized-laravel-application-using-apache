@@ -1,12 +1,12 @@
 version: '3'
 
 services:
-  synkdemoapp:
+  snykdemoapp:
     build:
       context: '.'
       args:
         uid: 1000
-    container_name: synkdemoapp
+    container_name: snykdemoapp
     ports:
       - 8000:80
     environment:
@@ -17,7 +17,7 @@ services:
     networks:
       app-network:
         aliases:
-          - synkdemoapp
+          - snykdemoapp
 
   app_db:
     image: mysql:5.7
@@ -26,7 +26,7 @@ services:
       - ./run/var:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=securerootpassword
-      - MYSQL_DATABASE=synkdemoapp_db
+      - MYSQL_DATABASE=snykdemoapp_db
       - MYSQL_USER=app_user
       - MYSQL_PASSWORD=user_password
     networks:
